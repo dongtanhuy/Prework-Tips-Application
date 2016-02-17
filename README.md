@@ -1,18 +1,10 @@
 # Pre-work - *Tips Calculator*
 
-> HINT: Please
-> - include this README.md in your project and fill out the information. 
-> - remove all the HINT blocks in this file.
-
-**Tips Calculator* is a tip calculator application for iOS.
+**Tips Calculator** is a tip calculator application for iOS.
 
 Submitted by: **Dong Tan Huy**
 
 Time spent: **20** hours spent in total
-
-## User Stories
-
-> HINT: mark the items you completed with [x]
 
 The following **required** functionality is complete:
 
@@ -25,18 +17,7 @@ The following **optional** features are implemented:
 * [X] Using locale-specific currency and currency thousands separators.
 * [X] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
 
-The following **additional** features are implemented:
-
-- [ ] List anything else that you can get done to improve the app functionality!
-
 ## Video Walkthrough 
-
-> HINT: You can put a `walkthrough.gif` file in your project folder, add to git, and use the following syntax to embed it: 
- 
-> `![Video Walkthrough](walkthrough.gif)` 
- 
-> You can also upload your image to imgur.com and embed the link here.
-
 Here's a walkthrough of implemented user stories:
 
 ![Video Walkthrough](Tips/walkthrough.gif)
