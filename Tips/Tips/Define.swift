@@ -9,3 +9,5 @@
 import Foundation
 
 let kThemeIndex = "ThemeIndex"
+let kBillAmount = "BillAmount"
+let kPercentage = "Percentage"

@@ -12,16 +12,31 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var billAmount: String?
+    var currencySimple: String?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
         let appearance = UINavigationBar.appearance()
-        appearance.titleTextAttributes = [NSFontAttributeName: UIFont(name: "TrendSansOne", size: 20)!,NSForegroundColorAttributeName: UIColor.whiteColor()]
+        appearance.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
 
         if NSUserDefaults.standardUserDefaults().objectForKey(kThemeIndex) == nil {
+            billAmount = ""
             NSUserDefaults.standardUserDefaults().setObject(0, forKey: kThemeIndex)
+            NSUserDefaults.standardUserDefaults().setObject(billAmount, forKey: kBillAmount)
+            NSUserDefaults.standardUserDefaults().setObject(0, forKey: kPercentage)
+        }
+        else {
+            billAmount = NSUserDefaults.standardUserDefaults().objectForKey(kBillAmount) as? String
+        }
+        
+        let language = NSLocale.currentLocale().objectForKey(NSLocaleLanguageCode)! as! String
+        switch language {
+        case "vi":
+            currencySimple = "đ"
+        default:
+            currencySimple = "$"
         }
         
         let themeIndex = NSUserDefaults.standardUserDefaults().objectForKey(kThemeIndex) as! Int
@@ -40,6 +55,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        NSUserDefaults.standardUserDefaults().setObject(billAmount, forKey: kBillAmount)
+        NSUserDefaults.standardUserDefaults().synchronize()
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
